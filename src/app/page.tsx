@@ -1,103 +1,63 @@
-import Image from "next/image";
+import { cn } from '@/lib/utils'
+import { Button } from './components/ui/button'
+import { Navbar } from './components/navbar'
+import { InfiniteMovingCards } from './components/ui/moving-card'
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <>
+      <Navbar />
+      <div className='relative flex h-svh w-full items-center justify-center bg-white dark:bg-black'>
+        <div
+          className={cn(
+            'absolute inset-0',
+            '[background-size:20px_20px]',
+            '[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]',
+            'dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]'
+          )}
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+        <div className='z-10 flex max-w-[750px] flex-col items-center justify-center text-center'>
+          <img src='/hero-image.svg' />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <span className='text-white-200 mt-4 mb-4 text-xl font-medium'>
+            Olá, eu sou Moraes Dev ✌️
+          </span>
+
+          <h1 className='text-white-400 mb-6 text-4xl leading-12 font-bold'>
+            Construo experiências digitais com foco em performance e design.
+          </h1>
+
+          <p className='text-white-100 max-w-[550px] text-sm'>
+            Desenvolvedor Front-End com experiência em React e TypeScript. Trabalho criando
+            interfaces modernas e performáticas e atuo como criador de conteúdo no @moraesdev.
+          </p>
+
+          <div className='mt-8 flex gap-4'>
+            <Button variant='primary'>Descubra mais mais</Button>
+            <Button variant='secondary' className='min-w-[200px]'>
+              Baixar CV
+            </Button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </div>
+
+      <InfiniteMovingCards
+      speed='slow'
+        items={[
+          { name: 'teste 1', title: 'teste 1', quote: 'teste 1' },
+          { name: 'teste 2', title: 'teste 2', quote: 'teste 2' },
+          { name: 'teste 3', title: 'teste 3', quote: 'teste 3' },
+          { name: 'teste 4', title: 'teste 4', quote: 'teste 4' },
+          { name: 'teste 5', title: 'teste 5', quote: 'teste 5' },
+          { name: 'teste 6', title: 'teste 6', quote: 'teste 6' },
+          { name: 'teste 7', title: 'teste 7', quote: 'teste 7' },
+          { name: 'teste 8', title: 'teste 8', quote: 'teste 8' },
+          { name: 'teste 9', title: 'teste 9', quote: 'teste 9' },
+          { name: 'teste 10', title: 'teste 10', quote: 'teste 10' }
+        ]}
+      />
+
+      <div className='h-[50rem]'></div>
+    </>
+  )
 }
