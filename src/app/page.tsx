@@ -2,8 +2,56 @@ import { cn } from '@/lib/utils'
 import { Button } from './components/ui/button'
 import { Navbar } from './components/navbar'
 import { InfiniteMovingCards } from './components/ui/moving-card'
+import ProjectCard from './components/project-Card'
 
 export default function Home() {
+
+  const projectCards = [
+  {
+    name: "Cine Explores Moraes",
+    description: "Este projeto web consome a API do TMDB para listar filmes populares e permitir buscas, responsivo e possui modo escuro para uma melhor experiência do usuário.",
+    url: "https://cine-explores-moraes.vercel.app/",
+    image: "https://cine-explores-moraes.vercel.app/static/media/cine-explores-moraes.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.png",
+    tags: ["React", "NextJs", "TypeScript", "TailwindCss"],
+  },
+  {
+    name: "Cine Explores Moraes",
+    description: "Este projeto web consome a API do TMDB para listar filmes populares e permitir buscas, responsivo e possui modo escuro para uma melhor experiência do usuário.",
+    url: "https://cine-explores-moraes.vercel.app/",
+    image: "https://cine-explores-moraes.vercel.app/static/media/cine-explores-moraes.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.png",
+    tags: ["React", "NextJs", "TypeScript", "TailwindCss"],
+  },
+  {
+    name: "Cine Explores Moraes",
+    description: "Este projeto web consome a API do TMDB para listar filmes populares e permitir buscas, responsivo e possui modo escuro para uma melhor experiência do usuário.",
+    url: "https://cine-explores-moraes.vercel.app/",
+    image: "https://cine-explores-moraes.vercel.app/static/media/cine-explores-moraes.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.png",
+    tags: ["React", "NextJs", "TypeScript", "TailwindCss"],
+  }
+  , {
+    name: "Cine Explores Moraes",
+    description: "Este projeto web consome a API do TMDB para listar filmes populares e permitir buscas, responsivo e possui modo escuro para uma melhor experiência do usuário.",
+    url: "https://cine-explores-moraes.vercel.app/",
+    image: "https://cine-explores-moraes.vercel.app/static/media/cine-explores-moraes.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.png",
+    tags: ["React", "NextJs", "TypeScript", "TailwindCss"],
+  },
+  {
+    name: "Cine Explores Moraes",
+    description: "Este projeto web consome a API do TMDB para listar filmes populares e permitir buscas, responsivo e possui modo escuro para uma melhor experiência do usuário.",
+    url: "https://cine-explores-moraes.vercel.app/",
+    image: "https://cine-explores-moraes.vercel.app/static/media/cine-explores-moraes.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.png",
+    tags: ["React", "NextJs", "TypeScript", "TailwindCss"],
+  },
+  {
+    name: "Cine Explores Moraes",
+    description: "Este projeto web consome a API do TMDB para listar filmes populares e permitir buscas, responsivo e possui modo escuro para uma melhor experiência do usuário.",
+    url: "https://cine-explores-moraes.vercel.app/",
+    image: "https://cine-explores-moraes.vercel.app/static/media/cine-explores-moraes.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.png",
+    tags: ["React", "NextJs", "TypeScript", "TailwindCss"],
+  }, 
+
+  
+]
   return (
     <>
       <Navbar />
@@ -57,7 +105,18 @@ export default function Home() {
         ]}
       />
 
-      <div className='h-[50rem]'></div>
+      <div className='container mx-auto'>
+
+
+        <p className='text-2xl text-white-500 text-center '>Projetos</p>
+      <div className='grid grid-cols-3 mt-6 gap-7'> 
+        {projectCards.map((projectCard, index) => (
+          <ProjectCard key={index}/>
+        ))}
+
+      </div>  
+      </div>
+
     </>
   )
 }
