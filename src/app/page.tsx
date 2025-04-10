@@ -1,7 +1,8 @@
 import { cn } from '@/lib/utils'
-import { Button } from './components/ui/button'
+import { Hero } from './components/hero'
 import { Navbar } from './components/navbar'
 import { InfiniteMovingCards } from './components/ui/moving-card'
+import { Experiences } from './components/experiences'
 
 export default function Home() {
   return (
@@ -16,33 +17,12 @@ export default function Home() {
             'dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]'
           )}
         />
-        <div className='z-10 flex max-w-[750px] flex-col items-center justify-center text-center'>
-          <img src='/hero-image.svg' />
 
-          <span className='text-white-200 mt-4 mb-4 text-xl font-medium'>
-            Olá, eu sou Moraes Dev ✌️
-          </span>
-
-          <h1 className='text-white-400 mb-6 text-4xl leading-12 font-bold'>
-            Construo experiências digitais com foco em performance e design.
-          </h1>
-
-          <p className='text-white-100 max-w-[550px] text-sm'>
-            Desenvolvedor Front-End com experiência em React e TypeScript. Trabalho criando
-            interfaces modernas e performáticas e atuo como criador de conteúdo no @moraesdev.
-          </p>
-
-          <div className='mt-8 flex gap-4'>
-            <Button variant='primary'>Descubra mais mais</Button>
-            <Button variant='secondary' className='min-w-[200px]'>
-              Baixar CV
-            </Button>
-          </div>
-        </div>
+        <Hero />
       </div>
 
       <InfiniteMovingCards
-      speed='slow'
+        speed='normal'
         items={[
           { name: 'teste 1', title: 'teste 1', quote: 'teste 1' },
           { name: 'teste 2', title: 'teste 2', quote: 'teste 2' },
@@ -57,7 +37,9 @@ export default function Home() {
         ]}
       />
 
-      <div className='h-[50rem]'></div>
+      <div className='container mx-auto'>
+        <Experiences />
+      </div>
     </>
   )
 }

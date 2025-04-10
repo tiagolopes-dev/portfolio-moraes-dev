@@ -1,3 +1,5 @@
+'use client'
+
 import { PropsWithChildren } from 'react'
 import { cn } from '@/lib/utils'
 
@@ -14,6 +16,7 @@ export function Button({
 }: PropsWithChildren<Props> & React.HTMLAttributes<HTMLButtonElement>) {
   return (
     <button
+      {...props}
       className={cn(
         'border px-4 py-2 font-medium text-white cursor-pointer duration-200',
         variant === 'primary' &&

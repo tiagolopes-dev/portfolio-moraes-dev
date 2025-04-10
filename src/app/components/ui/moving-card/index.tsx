@@ -40,7 +40,7 @@ export const InfiniteMovingCards = ({
     '/nest-icon.svg',
     '/postgresql-icon.svg',
     '/sqlserver-icon.svg',
-    // '/framer-icon.svg',
+    '/framer-icon.svg',
   ]
 
   useEffect(() => {
