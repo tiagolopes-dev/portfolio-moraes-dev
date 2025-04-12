@@ -1,8 +1,8 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  --color-primary: #1D4ED8;
-  --color-secondary: #6B92FF;
+  --color-primary: #1d4ed8;
+  --color-secondary: #6b92ff;
 
   --color-black-500: #000;
   --color-black-400: #101010;
@@ -10,22 +10,49 @@
   --color-black-200: #333333;
 
   --color-white-500: #ffffff;
-  --color-white-400: #F1F1F1;
-  --color-white-300: #E2E2E2;
-  --color-white-200: #DFDFDF;
-  --color-white-100: #D4D4D4;
-  --color-white-50: #D0D0D0;
+  --color-white-400: #f1f1f1;
+  --color-white-300: #e2e2e2;
+  --color-white-200: #dfdfdf;
+  --color-white-100: #d4d4d4;
+  --color-white-50: #d0d0d0;
 
   --color-gray-500: #909090;
-  --color-gray-400: #BE8D8D;
+  --color-gray-400: #be8d8d;
 
-  --color-blue-500: #0C36AA;
-  --color-blue-400: #395DC1;
+  --color-blue-500: #0c36aa;
+  --color-blue-400: #395dc1;
+
+  --animate-shake-wave: shake-wave 10s cubic-bezier(0.6, 0.05, 0.4, 0.95) infinite;
+
+  @keyframes shake-wave {
+    0% {
+      transform: translate(0px, 2px) rotate(0deg);
+    }
+    15% {
+      transform: translate(2px, 0px) rotate(0.4deg);
+    }
+    30% {
+      transform: translate(-2px, 1px) rotate(-0.4deg);
+    }
+    50% {
+      transform: translate(-2px, 2px) rotate(-0.3deg);
+    }
+    70% {
+      transform: translate(3px, 2px) rotate(0.3deg);
+    }
+    85% {
+      transform: translate(1px, 2px) rotate(0.2deg);
+    }
+    100% {
+      transform: translate(0px, 2px) rotate(0deg);
+    }
+  }
 }
 
 @theme inline {
-  --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
- 
+  --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards)
+    linear infinite;
+
   @keyframes scroll {
     to {
       transform: translate(calc(-50% - 0.5rem));
