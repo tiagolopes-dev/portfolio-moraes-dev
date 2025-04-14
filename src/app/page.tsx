@@ -39,7 +39,7 @@ export default function Home() {
         ]}
       />
 
-      <div className='container mx-auto'>
+      <div className='container mx-auto px-3 md:px-0'>
         <AboutMe />
         <Experiences />
       </div>

@@ -1,7 +1,7 @@
 'use client'
 import { HiDocumentText } from 'react-icons/hi'
 import { FaCheckSquare } from 'react-icons/fa'
-import { handleDownloadCv } from "@/lib/utils"
+import { handleDownloadCv } from '@/lib/utils'
 
 export const Experiences = () => {
   const experiences = [
@@ -92,18 +92,9 @@ export const Experiences = () => {
     }
   ]
 
-  const formatList = (list: string[]) => {
-    const formatter = new Intl.ListFormat('pt', {
-      style: 'long',
-      type: 'conjunction'
-    })
-
-    return formatter.format(list)
-  }
-
   return (
-    <div className='flex justify-around'>
-      <div className='sticky top-40 max-w-80 self-start'>
+    <div className='flex flex-col justify-around md:flex-row'>
+      <div className='relative mb-8 max-w-80 md:sticky md:top-40 md:mb-0 md:self-start'>
         <h1 className='mb-4 text-3xl font-bold text-white'>
           Minhas experiências ao longo dos anos
         </h1>
@@ -111,13 +102,16 @@ export const Experiences = () => {
           Um breve resumo das experiências que moldaram minha jornada como desenvolvedor Front-end.
         </p>
 
-        <div className='text-primary flex cursor-pointer items-center gap-2' onClick={handleDownloadCv}>
+        <div
+          className='text-primary flex cursor-pointer items-center gap-2'
+          onClick={handleDownloadCv}
+        >
           <HiDocumentText className='text-xl' />
           <span className='text-sm font-medium'>Baixar meu curriculo</span>
         </div>
       </div>
 
-      <div className='flex max-w-2/6 flex-col gap-10'>
+      <div className='flex max-w-full md:max-w-2/6 flex-col gap-10'>
         {experiences.map((experience, index) => {
           return (
             <div key={index}>
@@ -125,7 +119,7 @@ export const Experiences = () => {
                 <img
                   src={experience.companyLogo}
                   alt='company-logo'
-                  className='size-10 rounded-full outline-2 outline-primary/45 drop-shadow-xs drop-shadow-primary/45'
+                  className='outline-primary/45 drop-shadow-primary/45 size-10 rounded-full outline-2 drop-shadow-xs'
                 />
                 <div className='w-full'>
                   <p className='text-white-400 text-lg font-semibold'>{experience.title}</p>
