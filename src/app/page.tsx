@@ -4,6 +4,7 @@ import { Navbar } from './components/navbar'
 import { InfiniteMovingCards } from './components/ui/moving-card'
 import { Experiences } from './components/experiences'
 import { AboutMe } from './components/about-me'
+import { Footer } from './components/footer'
 
 export default function Home() {
   return (
@@ -42,6 +43,7 @@ export default function Home() {
         <AboutMe />
         <Experiences />
       </div>
+      <Footer />
     </>
   )
 }
