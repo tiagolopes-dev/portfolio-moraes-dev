@@ -99,11 +99,11 @@ export default function Home() {
       <div className='container mx-auto px-3 md:px-0'>
         <AboutMe />
         <p className='text-white-500 text-center text-2xl'>Projetos</p>
-        <div className='mt-6 grid grid-cols-3 gap-7'>
+        {/* <div className='mt-6 grid grid-cols-3 gap-7'>
           {projectCards.map((projectCard, index) => (
             <ProjectCard key={index} />
           ))}
-        </div>
+        </div> */}
         <Experiences />
       </div>
       <Footer />
